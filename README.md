@@ -99,3 +99,17 @@
     :n,m s/old/new/g     //用new替换从n到m行里所有的old
     :%s/old/new/g      //用new替换当前文件里所有的old
 ```
+
+添加用户有sudo命令权限：
+
+    adduser <用户名> sudo
+
+Linux下创建用户
+
+<pre>useradd -s /bin/sh -g group1 –G adm,root gem -m fanyucai -d /home/fanyucai</pre>
+
+    -s 用户解释器
+    -g 用户所属用户组
+    -G 用户所属的其他组
+    -m 用户登录名
+    -d  用户目录
