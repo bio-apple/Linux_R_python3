@@ -34,3 +34,6 @@
 
     #安装对应版本的gcc
     sudo dnf install gcc-toolset-10-gcc -y
+    
+    #启用指定版本的gcc-toolset-N
+    scl enable gcc-toolset-10 'bash'
