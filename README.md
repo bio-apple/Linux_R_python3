@@ -15,3 +15,22 @@
 *安装中文语言包*
     
     dnf install glibc-langpack-zh -y
+
+*安装Linux 8 安装高版本gcc 9、10、11、12*
+
+    dnf search gcc-toolset |grep gcc.x86_64
+
+    #屏幕输出
+    gcc-toolset-10-gcc.x86_64 : GCC version 10
+    gcc-toolset-11-annobin-plugin-gcc.x86_64 : annobin gcc plugin
+    gcc-toolset-11-gcc.x86_64 : GCC version 11
+    gcc-toolset-12-annobin-plugin-gcc.x86_64 : annobin gcc plugin
+    gcc-toolset-12-gcc.x86_64 : GCC version 12
+    gcc-toolset-13-annobin-plugin-gcc.x86_64 : annobin gcc plugin
+    gcc-toolset-13-gcc.x86_64 : GCC version 13
+    gcc-toolset-14-annobin-plugin-gcc.x86_64 : annobin gcc plugin
+    gcc-toolset-14-gcc.x86_64 : GCC version 14
+    gcc-toolset-9-gcc.x86_64 : GCC version 9
+
+    #安装对应版本的gcc
+    sudo dnf install gcc-toolset-10-gcc -y
