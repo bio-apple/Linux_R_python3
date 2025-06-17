@@ -40,6 +40,45 @@
     #启用指定版本的gcc-toolset-N
     scl enable gcc-toolset-10 'bash'
 
+*安装docker*
+    
+    #安装系统依赖
+        sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+
+    #设置yum源(默认)
+        sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+    #阿里镜像源
+        sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+        sudo yum makecache fast
+
+    #安装完成后即可查看
+        /etc/yum.repos.d/docker-ce.repo
+
+    #查看可安装的docker版本
+        dnf list --showduplicates docker-ce
+
+    #默认安装
+        dnf -y install docker-ce docker-ce-cli containerd.io
+
+    #默认的docker data 数据会存放在/var/lib/docker，修改存储地址
+        rsync -aqxP /var/lib/docker /staging/docker
+        touch /etc/docker/daemon.json #如果不存在
+        在/etc/docker/daemon.json文件中添加
+        {"data-root": "/staging/docker/",
+        "experimental": true}
+    #设置docker pull的镜像源 选择网址：https://github.com/dongyubin/DockerHub中可用的链接添加到/etc/docker/daemon.json文件中例如：
+        {
+          "registry-mirrors": [
+            "https://dytt.online",
+            "https://lispy.org"，
+          ]
+        }
+    #启动docker
+        systemctl start docker
+    #设置开机自启动
+        systemctl enable docker.service
+    
 
 ## vim 基本命令查找和替换
 (命令模式)移动光标
