@@ -78,7 +78,11 @@
         systemctl start docker
     #设置开机自启动
         systemctl enable docker.service
-    
+
+## 安装glibc以及gcc
+
+    dnf groupinstall "Development Tools"
+    dnf install gcc gcc-c++ make kernel-headers glibc-devel
 
 ## vim 基本命令查找和替换
 (命令模式)移动光标
