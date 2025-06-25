@@ -18,7 +18,7 @@
     
     dnf install glibc-langpack-zh -y
 
-*安装Linux 8 安装高版本gcc 9、10、11、12*
+*Linux安装高版本gcc 9、10、11、12*
 
     #简单一键安装
     sudo dnf install gcc-toolset-10* -y
