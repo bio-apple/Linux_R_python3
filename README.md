@@ -42,7 +42,7 @@
     cd /opt/rh/gcc-toolset-12/root/usr/lib/gcc/architecture-linux-gnu/10/plugin
     ln -s annobin.so gcc-annobin.so
     
-    #命令行临时启用指定版本的gcc-toolset-N(
+    #命令行临时启用指定版本的gcc-toolset-N
     scl enable gcc-toolset-10 'bash'
 
 *安装docker*
