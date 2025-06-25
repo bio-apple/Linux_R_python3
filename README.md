@@ -23,7 +23,7 @@
     #简单一键安装
     sudo dnf install gcc-toolset-10* -y
     
-    #默认安装在:/opt/rh/gcc-toolset-10/
+    #默认安装在:/opt/rh/gcc-toolset-10/,需要设置软件链接这一部分很重要
     #https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/developing_c_and_cpp_applications_in_rhel_9/assembly_additional-toolsets-for-development-rhel-9_developing-applications#ref_specifics-of-annobin-in-gcc-toolset-12_gcc-toolset-12
     cd /opt/rh/gcc-toolset-12/root/usr/lib/gcc/architecture-linux-gnu/10/plugin
     ln -s annobin.so gcc-annobin.so
