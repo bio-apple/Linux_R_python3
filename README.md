@@ -34,10 +34,15 @@
     gcc-toolset-14-gcc.x86_64 : GCC version 14
     gcc-toolset-9-gcc.x86_64 : GCC version 9
 
-    #安装对应版本的gcc
-    sudo dnf install gcc-toolset-10-gcc -y
+    #简单一键安装
+    sudo dnf install gcc-toolset-10* -y
     
-    #启用指定版本的gcc-toolset-N
+    #默认安装在:/opt/rh/gcc-toolset-10/
+    #https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/developing_c_and_cpp_applications_in_rhel_9/assembly_additional-toolsets-for-development-rhel-9_developing-applications#ref_specifics-of-annobin-in-gcc-toolset-12_gcc-toolset-12
+    cd /opt/rh/gcc-toolset-12/root/usr/lib/gcc/architecture-linux-gnu/10/plugin
+    ln -s annobin.so gcc-annobin.so
+    
+    #命令行临时启用指定版本的gcc-toolset-N(
     scl enable gcc-toolset-10 'bash'
 
 *安装docker*
